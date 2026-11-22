@@ -1,0 +1,129 @@
+.findRecipes {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.breadcrumb {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-size: 14px;
+    font-family: Polysans, sans-serif;
+    color: #777;
+}
+
+/* Style the links inside the breadcrumb */
+.breadcrumb a {
+    text-decoration: none;
+    color: #0056b3; /* Clean blue link color */
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Hover state for links (smooth finger cursor + underline) */
+.breadcrumb a:hover {
+    color: #66b0ff;
+    text-decoration: underline;
+}
+
+
+/* Automatically injects the "/" separator between elements */
+.breadcrumb a:not(:last-child)::after,
+.breadcrumb span:not(:last-child)::after {
+    content: "/";
+    margin-left: 8px;
+    color: #ccc;
+    text-decoration: none !important; /* Keeps underline off the slash */
+    pointer-events: none; /* Keeps it unclickable */
+}
+
+/* The active/current page styling */
+.breadcrumb .active {
+    color: #222; /* Darker color for current page */
+    font-weight: bold;
+    cursor: default; /* Keeps it as an arrow cursor, not a finger */
+}
+
+/* Hero section */
+.hero {
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('/images/find-recipe-hero.jpeg');
+
+  background-size: cover;
+  background-position: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  color: white;
+}
+
+.heroContent h1 {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.heroContent p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* Search section */
+.searchSection {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.searchSection h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+@media screen and (max-width: 960px) {
+    .heroContent h1 {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+
+    .heroContent {
+      max-width: 900px;
+      color: white;
+    }
+
+    .heroContent h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .heroContent p {
+      font-size: 20px;
+      line-height: 1.6;
+    }
+}
+
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+  .searchSection h2 {
+    font-size: 18px;
+  }
+
+}

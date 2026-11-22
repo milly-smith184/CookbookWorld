@@ -1,0 +1,81 @@
+.foodList {
+  display: grid;
+
+  /* Displays 3 recipe cards per row */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  /* Space between recipe cards */
+  gap: 30px;
+
+  /* Equal spacing on both sides */
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+
+  box-sizing: border-box;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 35px auto;
+}
+
+.pageButton,
+.activePage {
+  min-width: 40px;
+  padding: 9px 12px;
+  border: 1px solid #496F25;
+  border-radius: 5px;
+  background-color: white;
+  color: #496F25;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.pageButton:hover:not(:disabled),
+.activePage {
+  background-color: #496F25;
+  color: white;
+}
+
+.pageButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+  .pagination {
+    gap: 5px;
+    width: 95%;
+  }
+
+  .pageButton,
+  .activePage {
+    min-width: 34px;
+    padding: 8px 9px;
+    font-size: 12px;
+  }
+}
+
+/* Tablet screens */
+@media screen and (max-width: 900px) {
+  .foodList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 600px) {
+  .foodList {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

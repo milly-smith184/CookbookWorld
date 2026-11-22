@@ -1,0 +1,21 @@
+.itemContainer {
+    margin-bottom: 10px;
+}
+
+.itemContainer ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.itemContainer li {
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.amount {
+    font-weight: normal;
+}
+
+.name {
+    font-weight: normal;
+}

@@ -1,0 +1,331 @@
+.navbar {
+  background: #004466;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 96%;
+  max-width: none;
+  height: 80px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.navbar-logo {
+  color: #fff;
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo-container {
+  position: absolute;
+  top: 55%;
+  left: clamp(12px, 4vw, 20px);
+  transform: translateY(-50%);
+}
+
+.navbar-logo-container .navbar-logo {
+  margin-left: 0;
+}
+
+.navbar-logo-container .nav-logo {
+  width: clamp(110px, 20vw, 160px);
+  height: auto;
+}
+
+.fa-typo3 {
+  margin-left: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 60vw;
+  justify-content: end;
+  margin-right: 2rem;
+}
+
+.nav-item {
+  height: 80px;
+}
+
+.nav-links {
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  box-sizing: border-box;
+  border-bottom: 4px solid transparent;
+}
+
+.nav-links:hover {
+  border-bottom-color: #fff;
+  transition: border-bottom-color 0.2s ease-out;
+}
+
+.fa-bars {
+  color: #fff;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* Adjusts the navigation layout when a user is logged in */
+.nav-menu.authenticated {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    width: auto;
+    gap: 4px;
+    margin-right: 1rem;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+/* Displays the logged-in user's name and icon */
+.nav-user-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    margin-left: 10px;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Holds the greeting and its dropdown together */
+.nav-user-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* Keeps the Logout button consistent with the navigation links */
+.nav-logout {
+  background: none;
+  border: none;
+  font-family: Arial, sans-serif;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+/* Positions Logout directly underneath the greeting */
+.nav-user-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 140px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.nav-user-dropdown button {
+    width: 100%;
+    padding: 12px 14px;
+    background: transparent;
+    border: none;
+    color: #004466;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.nav-user-dropdown button:hover {
+    background:  #b3b3b3;
+    border-radius: 4px;
+}
+/* Turns the greeting red when hovered on desktop */
+@media screen and (min-width: 961px) {
+    .nav-user-name:hover {
+        color: #DD4121;
+        transition: color 0.2s ease;
+    }
+
+    .nav-logout-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 960px) {
+  .NavbarItems {
+    position: relative; 
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-menu.active {
+    background: #004466;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: block;
+    font-size: 1.3rem;
+  }
+
+  .nav-links:hover {
+    background-color: #fff;
+    color: #242424;
+    border-radius: 0;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: transparent;
+    color: #fff;
+    padding: 14px 20px;
+    border: 1px solid #fff;
+    transition: all 0.3s ease-out;
+  }
+
+  .nav-links-mobile:hover {
+    background: #fff;
+    color: #242424;
+    transition: 250ms;
+  }
+
+  .navbar-logo-container .navbar-logo {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-left: 0;
+  }
+
+  .navbar-logo-container .nav-logo {
+    width: clamp(115px, 20vw, 130px);
+    max-height: 65px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Keeps the logged-in greeting inside the mobile navbar */
+  .nav-user-name {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-50%);
+    margin: 0;
+    padding-right: 1rem;
+    font-size: 1.2rem;
+    white-space: nowrap;
+  }
+
+  .fa-right-from-bracket {
+    color: #DD4121;
+  }
+
+  .nav-menu.authenticated {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+
+  .nav-menu.authenticated.active {
+    left: 0;
+  }
+
+  .nav-user-dropdown {
+    display: none;
+  }
+
+  .nav-user-name {
+    cursor: default;
+  }
+
+  .nav-logout-mobile {
+    display: block;
+}
+}

@@ -1,0 +1,429 @@
+.signInContainer{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
+	'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+}
+
+.signInContent{
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 55vw;
+  min-height: 520px;
+  max-width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  background-color: white;
+  border-radius: 40px;
+}
+
+.signInContent button{
+  background-color: #556FAA;
+  color: #fff;
+  padding: 10px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.formContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formHeader {
+  margin-bottom: 1.5rem;
+}
+
+.formHeader h1, .forgot a{
+  color: #556FAA;
+}
+
+.input {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 1rem;
+}
+
+.input_form {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input_form:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.createButton {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.buttonStyle {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid white;
+  border-radius: 0.375rem;
+  color: white;
+  width: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.buttonStyle:hover {
+  /* background-color: white; */
+  background-color: #556FAA;
+  color: #333;
+}
+
+.loginContainer {
+  width: 100%;
+  padding: 40px 30px 40px 40px;
+  box-sizing: border-box;
+}
+
+.inputLogin {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.formHeader h1, .forgot a{   
+  color: #556FAA;
+}
+
+.formCheck {
+  display: block;
+  margin-bottom: 0.125rem;
+}
+
+.formCheck input {
+  margin-right: 0.5rem;
+}
+
+.formCheck label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.formCheckInput {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  cursor: pointer;
+  accent-color: #263859;
+}
+
+.formCheckLabel {
+  color: #6c757d;
+  cursor: pointer;
+  font-size: 1rem;
+} 
+
+.switchDetailsLeft {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  color: white;
+  width: 5rem; /* If you intended a width of 5 */
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.switchDetailsRight {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid white;
+  border-radius: 0.375rem;
+  color: white;
+  width: auto;
+  min-width: 5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.switchContent {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 0 40px 40px 0;
+  z-index: 1000;
+}
+
+.switchContent button {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 8px;
+  min-width: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.switchContent button:hover {
+  background-color: white;
+  color: #556FAA;
+}
+
+.active {
+  /* Can remain empty if it is only used as a state class */
+}
+
+/* Moves the cover to the right when Register is selected */
+.active .switchContent {
+  transform: translateX(100%);
+  border-radius: 60px 0 0 60px;
+}
+
+.switch {
+  background-color: #556FAA;
+  color: #fff;
+  position: relative;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+/* Moves the blue background inside the cover */
+.active .switch {
+  transform: translateX(50%);
+}
+
+.switchPanel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.switchLeft {
+  transform: translateX(-200%);
+}
+
+/* Displays the Login panel */
+.active .switchLeft {
+  transform: translateX(0);
+}
+
+.switchRight {
+  right: 0;
+  transform: translateX(0);
+}
+
+/* Moves the Register panel out of view */
+.active .switchRight {
+  transform: translateX(200%);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+
+  .signInContent {
+    width: 85%;
+    min-height: 450px;
+  }
+
+  .logo {
+        width: 230px;
+    }
+
+  .formContainer,
+  .loginContainer {
+    padding: 25px;
+  }
+
+  .formHeader h1 {
+    font-size: 1.7rem;
+  }
+
+  .input_form {
+    font-size: 1rem;
+  }
+
+  .switchPanel {
+    padding: 0 20px;
+  }
+
+  .switchPanel h1 {
+    font-size: 1.7rem;
+  }
+
+  .switchPanel p {
+    font-size: 1rem;
+  }
+
+  .inputLogin {
+    margin-bottom: 2rem;
+  }
+
+  .buttonStyle {
+    width: 65%;
+      font-size: 1rem;
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 767px) {
+
+  .signInContainer {
+    padding: 1rem;
+    min-height: 100vh;
+  }
+
+  .signInContent {
+    width: 100%;
+    max-width: 450px;
+    min-height: auto;
+    flex-direction: column;
+    border-radius: 20px;
+  }
+
+  .formContainer,
+  .loginContainer {
+    width: 100%;
+    padding: 30px 25px;
+  }
+
+  /* Display only the selected form */
+  .formContainer {
+    display: none;
+  }
+
+  .active .loginContainer {
+    display: none;
+  }
+
+  .active .formContainer {
+    display: flex;
+  }
+
+  /* Switch panel */
+  .switchContent {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    transform: none;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .active .switchContent {
+    transform: none;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .switch {
+    position: relative;
+    left: auto;
+    width: 100%;
+    height: auto;
+    min-height: 170px;
+    transform: none;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .active .switch {
+    transform: none;
+  }
+
+  .switchPanel {
+    position: relative;
+    width: 100%;
+    min-height: 170px;
+    padding: 25px 20px;
+    box-sizing: border-box;
+    transform: none;
+  }
+
+  /* Toggle between switch messages */
+  .switchLeft {
+    display: none;
+  }
+
+  .switchRight {
+    display: flex;
+  }
+
+  .active .switchLeft {
+    display: flex;
+  }
+
+  .active .switchRight {
+    display: none;
+  }
+
+  .switchPanel h1 {
+    font-size: 1.5rem;
+  }
+
+  .switchPanel p {
+    font-size: 0.9rem;
+  }
+
+  .switchContent button {
+    margin-top: 5px;
+  }
+
+  .formHeader h1 {
+    font-size: 1.5rem;
+  }
+
+  .inputLogin {
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .buttonStyle {
+    width: 70%;
+  }
+}

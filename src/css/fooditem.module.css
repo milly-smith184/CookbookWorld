@@ -1,0 +1,106 @@
+.itemContainer {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.itemContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgb(0, 0, 0, 0.15);
+}
+
+/* Image section */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.itemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Heart button */
+.heartButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: white;
+  color: #DD4121;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 17px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heartButton:hover {
+  color: #DB0024;
+  transform: scale(1.3);
+}
+
+/* Recipe information */
+.itemContent {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 15px;
+}
+
+.itemName {
+  font-size: 1em;
+  font-weight: 600;
+  color: #393e46;
+  min-height: 40px;
+}
+
+.rating {
+  color: #E6A817;
+  font-weight: 600;
+}
+
+/* View recipe button */
+.itemButton {
+  background-color: #DD4121;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.itemButton:hover {
+  background-color: #DB0024;
+}
+
+.buttonContainer {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles the message displayed after saving a recipe */
+.saveMessage {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 13px;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* Changes the heart button's circular background after saving */
+.savedHeart {
+    background-color: #ffcccc;
+}

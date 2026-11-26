@@ -23,7 +23,9 @@ function SignIn(){
    const [registerData, setRegisterData] = useState({
       name: '',
       email: '',
-      password: ''
+      password: '',
+      securityQuestion: '',
+      securityAnswer: ''
    });
 
    /* Stores login form input values */
@@ -74,7 +76,7 @@ function SignIn(){
 
       try {
       	/* Sends registration details to the backend API */
-         const response = await fetch('http://192.168.0.18:5001/api/auth/register', {
+         const response = await fetch('/api/auth/register', {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json'
@@ -101,7 +103,9 @@ function SignIn(){
             setRegisterData({
                name: '',
                email: '',
-               password: ''
+               password: '',
+               securityQuestion: '',
+               securityAnswer: ''
             });
 
             const returnState = location.state?.returnState;
@@ -134,7 +138,7 @@ function SignIn(){
 
          try {
          	/* Sends login credentials to the backend API */
-            const response = await fetch('http://192.168.0.18:5001/api/auth/login', {
+            const response = await fetch('/api/auth/login', {
                method: 'POST',
                headers: {
                   'Content-Type': 'application/json'
@@ -194,6 +198,8 @@ function SignIn(){
             src={logo} 
             alt="CookbookWorld Logo" 
             className={styles.logo}
+            onClick={() => navigate('/')}
+            style={{ cursor: 'pointer' }}
          />
       </div>
 
@@ -233,6 +239,44 @@ function SignIn(){
                   />
 		   	   </div>
 		   	   
+               {/* Security question selected by the user */}
+               <div className={styles.input}>
+                  <select
+                     className={styles.input_form}
+                     name="securityQuestion"
+                     value={registerData.securityQuestion}
+                     onChange={handleRegisterChange}
+                     required
+                  >
+                     <option value="">Select a Security Question</option>
+                     <option value="What was the name of your first school?">
+                        What was the name of your first school?
+                     </option>
+                     <option value="What was the name of your first pet?">
+                        What was the name of your first pet?
+                     </option>
+                     <option value="What city were you born in?">
+                        What city were you born in?
+                     </option>
+                     <option value="What was your childhood nickname?">
+                        What was your childhood nickname?
+                     </option>
+                  </select>
+               </div>
+
+               {/* Security answer entered by the user */}
+               <div className={styles.input}>
+                  <input
+                     className={styles.input_form}
+                     type="text"
+                     name="securityAnswer"
+                     placeholder="Security Answer"
+                     value={registerData.securityAnswer}
+                     onChange={handleRegisterChange}
+                     required
+                  />
+               </div>
+
 		   	   {/* User's password (minimum 8 characters) */}
 		   	   <div className={styles.input}>
 		   	      <input
@@ -280,7 +324,7 @@ function SignIn(){
                      required
                   />
                </div>
-		   	   
+
 		   	   {/* User's account password */}
 		   	   <div className={styles.input}>
 		   	     	<input
@@ -316,7 +360,15 @@ function SignIn(){
 		   	     	{/* Forgot password link */}
 		   	     	<div className={styles.forgot}>
 		   	     		<small>
-		   	     			<a href="#"> Forgot Password? </a>
+		   	     			<a
+                           href="/forgot-password"
+                           onClick={(event) => {
+                              event.preventDefault();
+                              navigate('/forgot-password');
+                           }}
+                        >
+                           Forgot Password?
+                        </a>
 		   	     		</small>
 		   	     	</div>
 		   	   </div>

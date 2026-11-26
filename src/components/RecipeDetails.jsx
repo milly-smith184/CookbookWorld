@@ -57,7 +57,7 @@ export default function RecipeDetails({ foodId, onBack, backLabel = "← Back to
         setSaveMessage("");
 
         /* Sends a POST request to the backend API to save the recipe */
-        const response = await fetch("http://192.168.0.18:5001/api/favourites", {
+        const response = await fetch("/api/favourites", {
             method: "POST",
             credentials: "include",
             headers: {
@@ -143,7 +143,7 @@ export default function RecipeDetails({ foodId, onBack, backLabel = "← Back to
         try {
 
             /* Sends a POST request to the favourites API */
-            const response = await fetch("http://192.168.0.18:5001/api/favourites", {
+            const response = await fetch("/api/favourites", {
                 method: "POST",
                 credentials: "include",
                 headers: {

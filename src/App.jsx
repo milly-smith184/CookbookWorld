@@ -16,14 +16,17 @@ import SignIn from './components/pages/SignIn';
 import HowItWorks from './components/pages/HowItWorks';
 import Favourites from './components/pages/Favourites';
 import UserProfile from './components/pages/UserProfile';
+import ForgotPassword from './components/pages/ForgotPassword';
 import Footer from './components/Footer';
 
 function AppContent() {
   /* Gets the current URL path */
   const location = useLocation();
 
-  /* Checks whether the current page is Sign In */
+  /* Checks whether the current page is Sign In or Forgot Password */
   const isSignInPage = location.pathname === '/SignIn';
+  const isForgotPasswordPage = location.pathname === '/forgot-password';
+  const hideLayout = isSignInPage || isForgotPasswordPage;
 
   return (
     <> 
@@ -31,7 +34,7 @@ function AppContent() {
       <ScrollToTop />
 
       {/* Displays the navigation bar on all pages except Sign In */}
-      {!isSignInPage && <Navbar />}
+      {!hideLayout && <Navbar />}
 
       {/* Defines the available application routes */}
       <Routes>
@@ -57,10 +60,13 @@ function AppContent() {
         {/* Route for the Favourites page */}
         <Route path='/Favourites' element={<Favourites />} />
 
+        {/* Route for the Forgot Password page */}
+        <Route path='/forgot-password' element={<ForgotPassword />} />
+
       </Routes>
 
       {/* Displays the footer on all pages except Sign In */}
-      {!isSignInPage && <Footer />}
+      {!hideLayout && <Footer />}
 
     </>
   );  

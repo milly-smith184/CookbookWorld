@@ -32,7 +32,7 @@ function Favourites() {
        try {
           // Sends a DELETE request to the backend
           const response = await fetch(
-             `http://192.168.0.18:5001/api/favourites/${savedRecipeId}`,
+             `/api/favourites/${savedRecipeId}`,
              {
                 method: "DELETE",
                 credentials: "include"
@@ -68,7 +68,7 @@ function Favourites() {
 
                 /* Requests the user's saved recipes from the backend */
                 const response = await fetch(
-                   "http://192.168.0.18:5001/api/favourites",
+                   "/api/favourites",
                    {
                       method: "GET",
                       credentials: "include"

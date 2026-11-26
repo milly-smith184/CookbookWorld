@@ -13,7 +13,7 @@ export function AuthProvider({ children }) {
     /* Checks whether a user currently has an active session */
     const refreshUser = async () => {
         try {
-            const response = await fetch('http://192.168.0.18:5001/api/auth/me', {
+            const response = await fetch('/api/auth/me', {
                 method: 'GET',
                 credentials: 'include'
             });
@@ -49,7 +49,7 @@ export function AuthProvider({ children }) {
 
     /* Logs out the current user and destroys their session */
     const logout = async () => {
-        const response = await fetch('http://192.168.0.18:5001/api/auth/logout', {
+        const response = await fetch('/api/auth/logout', {
             method: 'POST',
             credentials: 'include'
         });

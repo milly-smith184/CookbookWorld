@@ -47,7 +47,7 @@ export default function FoodItem({ food, setFoodId }) {
 
     /* Sends a request to save the recipe */
     const response = await fetch(
-       "http://192.168.0.18:5001/api/favourites",
+       "/api/favourites",
        {
           method: "POST",
           credentials: "include",

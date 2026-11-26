@@ -144,6 +144,7 @@
 .profile-field {
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
     gap: 9px;
     min-width: 0;
     width: 100%;
@@ -155,7 +156,7 @@
     color: #444;
 }
 
-.profile-field input {
+.profile-field input, select {
     box-sizing: border-box;
     width: 100%;
     min-width: 0;
